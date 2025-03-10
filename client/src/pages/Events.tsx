@@ -239,7 +239,7 @@ function Events() {
               <ImageCarousel
                 images={[
                   "/b.jpg", // Replace with actual image URLs
-                  "bolly2.jpg",
+                  "bolly1.jpg",
                   "/bolly2.jpg",
                 ]}
               />
@@ -253,7 +253,7 @@ function Events() {
                 <div className="mb-3 text-gray-300">
                   <div className="flex items-center gap-2 mb-1">
                     <Calendar className="h-4 w-4 text-purple-400" />
-                    <span>March 27th, Friday</span>
+                    <span>March 27th, Thursday</span>
                   </div>
                   <div className="flex items-center gap-2 mb-1">
                     <MapPin className="h-4 w-4 text-purple-400" />
