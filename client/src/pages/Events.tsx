@@ -5,6 +5,7 @@ import axios from 'axios';
 import PaymentModal from '../components/PaymentModal';
 import { useNavigate } from 'react-router-dom';
 import TicketSelectionModal from '../components/TicketSelectionModal';
+import { IEvent } from './createEvent';
 
 // Add new ImageCarousel component
 const ImageCarousel = ({ images }: { images: string[] }) => {
@@ -224,6 +225,84 @@ function Events() {
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+              
+          <div
+              key="bollyverse-2025"
+              onClick={(e) => {
+                      e.stopPropagation(); // Prevent event bubbling
+                      window.open(
+                        "https://forms.gle/YxcV5sNxthH1Xkdo8",
+                        "_blank"
+                      );}}
+              className="bg-gray-800 border border-gray-700 rounded-xl overflow-hidden cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl min-h-[450px] flex flex-col"
+            >
+              <ImageCarousel
+                images={[
+                  "/b.jpg", // Replace with actual image URLs
+                  "bolly2.jpg",
+                  "/bolly2.jpg",
+                ]}
+              />
+              <div className="p-3 flex-1 flex flex-col justify-between">
+                <h3 className="text-xl font-semibold mb-1">Bollyverse</h3>
+                <p className="text-gray-400 mb-2 line-clamp-2">
+                  From the vortex of revelry we present Bollyverse
+                </p>
+
+                {/* Event details */}
+                <div className="mb-3 text-gray-300">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Calendar className="h-4 w-4 text-purple-400" />
+                    <span>March 27th, Friday</span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <MapPin className="h-4 w-4 text-purple-400" />
+                    <span>Diona</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="h-4 w-4 text-purple-400" />
+                    <span>6 PM - 11 PM</span>
+                  </div>
+                </div>
+
+                {/* Show ticket tiers */}
+                <div className="mb-2">
+                  <p className="text-sm text-gray-400 mb-1">
+                    🎟️ EARLY BIRD TICKETS:
+                  </p>
+                  <div className="text-sm flex justify-between text-gray-300">
+                    <span>Female Stag</span>
+                    <span>₹400</span>
+                  </div>
+                  <div className="text-sm flex justify-between text-gray-300">
+                    <span>Male Stag</span>
+                    <span>₹500</span>
+                  </div>
+                  <div className="text-sm flex justify-between text-gray-300">
+                    <span>Couple Pass</span>
+                    <span>₹800</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between mt-2">
+                  <span className="text-purple-500 font-semibold">
+                    From ₹400
+                  </span>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation(); // Prevent event bubbling
+                      window.open(
+                        "https://forms.gle/YxcV5sNxthH1Xkdo8",
+                        "_blank"
+                      );
+                    }}
+                    className="px-4 py-2 rounded-lg font-medium bg-purple-500 text-white hover:bg-purple-600"
+                  >
+                    Book Now
+                  </button>
+                </div>
+              </div>
+            </div>
             {events.map((event) => {
               const lowestPrice = event.ticketTiers?.length
                 ? Math.min(...event.ticketTiers.map((t: any) => t.price))
