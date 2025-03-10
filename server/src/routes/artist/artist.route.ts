@@ -1,8 +1,7 @@
-import { Router, Request, Response, NextFunction, RequestHandler } from 'express';
+import { Router, Request, Response, NextFunction } from 'express';
 import { GenericController } from '../../controllers/genericController.js';
 import Artist from '../../models/Artist.js';
 import { isAuthenticated } from '../../middlewares/isAuthenticated.js';
-import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 const artistController = new GenericController(Artist);
@@ -11,7 +10,6 @@ const router: Router = Router();
 router.get('/list', artistController.getAll);
 router.get('/:id', isAuthenticated('user&artist'), artistController.get);
 
-// Fixed signup route handler by removing return statements
 router.post('/signup', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { 
@@ -34,15 +32,11 @@ router.post('/signup', async (req: Request, res: Response, next: NextFunction) =
       return;
     }
     
-    // Hash password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-    
-    // Create artist
+    // Create artist with plain password (no hashing)
     const newArtist = new Artist({
       username,
       email,
-      password: hashedPassword,
+      password, 
       role: 'artist',
       avatars: avatars || [],
       city,

@@ -11,13 +11,11 @@ import { Router } from 'express';
 import { GenericController } from '../../controllers/genericController.js';
 import Artist from '../../models/Artist.js';
 import { isAuthenticated } from '../../middlewares/isAuthenticated.js';
-import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 const artistController = new GenericController(Artist);
 const router = Router();
 router.get('/list', artistController.getAll);
 router.get('/:id', isAuthenticated('user&artist'), artistController.get);
-// Fixed signup route handler by removing return statements
 router.post('/signup', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { username, email, password, avatars, city, state, country, pincode, phoneNumber, tag, bio, videoLink1, videoLink2, videoLink3, instagram, twitter, youtube, facebook, tiktok } = req.body;
@@ -33,14 +31,11 @@ router.post('/signup', (req, res, next) => __awaiter(void 0, void 0, void 0, fun
             res.status(409).json({ message: 'Artist with this email already exists' });
             return;
         }
-        // Hash password
-        const salt = yield bcrypt.genSalt(10);
-        const hashedPassword = yield bcrypt.hash(password, salt);
-        // Create artist
+        // Create artist with plain password (no hashing)
         const newArtist = new Artist({
             username,
             email,
-            password: hashedPassword,
+            password,
             role: 'artist',
             avatars: avatars || [],
             city,
