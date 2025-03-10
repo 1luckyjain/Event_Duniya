@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
-import express, { Express, Request, Response } from 'express';
+import express, { Express, Request, Response, NextFunction } from 'express';
 import connectToDatabase from './config/db.js';
 import cors from 'cors';
 import authRoutes from './routes/auth/auth.route.js';
@@ -42,7 +42,6 @@ app.use(
 );
 
 // Configure CORS with proper options
-// Configure CORS with proper options
 app.use(
   cors({
     origin: [
@@ -58,8 +57,27 @@ app.use(
 );
 
 app.options("*", cors()); // Handles preflight requests
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
+app.use((req: Request, res: Response, next: NextFunction): void => {
+  res.setHeader("Access-Control-Allow-Origin", "https://www.eventduniya.com");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, OPTIONS"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+
+  if (req.method === "OPTIONS") {
+    res.status(200).end(); // ✅ Ensure res.end() is used correctly
+    return;
+  }
+
+  next();
+});
 
 // Connect to MongoDB
 connectToDatabase();
