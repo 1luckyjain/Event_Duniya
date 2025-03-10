@@ -44,17 +44,13 @@ app.use(
 // Configure CORS with proper options
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://www.eventduniya.com", // Use HTTPS
-      "https://event-duniya-backened.vercel.app", // Use HTTPS
-      "https://event-duniya-omega.vercel.app", // Use HTTPS
-    ],
-    credentials: true,
+    origin: "*",
+    credentials: false, // Not needed if you're not using cookies or authentication tokens
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 
 app.options("*", cors()); // Handles preflight requests
 
