@@ -37,17 +37,19 @@ app.use(session({
     },
 }));
 // Configure CORS with proper options
+// Configure CORS with proper options
 app.use(cors({
     origin: [
-        'http://localhost:5173',
-        'http://www.eventduniya.com',
-        'http://event-duniya-backened.vercel.app',
-        'http://event-duniya-omega.vercel.app'
+        "http://localhost:5173",
+        "https://www.eventduniya.com", // Use HTTPS
+        "https://event-duniya-backened.vercel.app", // Use HTTPS
+        "https://event-duniya-omega.vercel.app", // Use HTTPS
     ],
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
 }));
+app.options("*", cors()); // Handles preflight requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Connect to MongoDB
