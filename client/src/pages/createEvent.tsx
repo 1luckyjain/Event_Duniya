@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 
 export interface IEvent {
+  private _id(_id: any): boolean | undefined;
   image: string;
   image1?: string;
   image2?: string;

@@ -231,37 +231,37 @@ function Events() {
               onClick={(e) => {
                       e.stopPropagation(); // Prevent event bubbling
                       window.open(
-                        "https://forms.gle/YxcV5sNxthH1Xkdo8",
+                        "https://forms.gle/z4NK7Nn1YNNSEq3r6",
                         "_blank"
                       );}}
               className="bg-gray-800 border border-gray-700 rounded-xl overflow-hidden cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl min-h-[450px] flex flex-col"
             >
               <ImageCarousel
                 images={[
-                  "/b.jpg", // Replace with actual image URLs
-                  "bolly1.jpg",
-                  "/bolly2.jpg",
+                  "/mani2.jpg", // Replace with actual image URLs
+                  "mani1.jpg",
+                  "/mani3.jpg",
                 ]}
               />
               <div className="p-3 flex-1 flex flex-col justify-between">
-                <h3 className="text-xl font-semibold mb-1">Bollyverse</h3>
+                <h3 className="text-xl font-semibold mb-1">AURORA</h3>
                 <p className="text-gray-400 mb-2 line-clamp-2">
-                  From the vortex of revelry we present Bollyverse
+                NETFLIX AND THRILL
                 </p>
 
                 {/* Event details */}
                 <div className="mb-3 text-gray-300">
                   <div className="flex items-center gap-2 mb-1">
                     <Calendar className="h-4 w-4 text-purple-400" />
-                    <span>March 27th, Thursday</span>
+                    <span>April 26th, Saturday</span>
                   </div>
                   <div className="flex items-center gap-2 mb-1">
                     <MapPin className="h-4 w-4 text-purple-400" />
-                    <span>Diona</span>
+                    <span>House of People</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4 text-purple-400" />
-                    <span>6 PM - 11 PM</span>
+                    <span>7 PM - 12 PM</span>
                   </div>
                 </div>
 
@@ -272,15 +272,15 @@ function Events() {
                   </p>
                   <div className="text-sm flex justify-between text-gray-300">
                     <span>Female Stag</span>
-                    <span>₹400</span>
+                    <span>₹749</span>
                   </div>
                   <div className="text-sm flex justify-between text-gray-300">
                     <span>Male Stag</span>
-                    <span>₹500</span>
+                    <span>₹749</span>
                   </div>
                   <div className="text-sm flex justify-between text-gray-300">
                     <span>Couple Pass</span>
-                    <span>₹800</span>
+                    <span>₹1299</span>
                   </div>
                 </div>
 
