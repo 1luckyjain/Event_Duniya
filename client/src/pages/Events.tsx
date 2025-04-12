@@ -246,7 +246,7 @@ function Events() {
               <div className="p-3 flex-1 flex flex-col justify-between">
                 <h3 className="text-xl font-semibold mb-1">AURORA</h3>
                 <p className="text-gray-400 mb-2 line-clamp-2">
-                NETFLIX AND THRILL
+                NETFLIX AND THRILL Also Inclusive of a complimentary shot or beverage.
                 </p>
 
                 {/* Event details */}
@@ -261,7 +261,7 @@ function Events() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4 text-purple-400" />
-                    <span>7 PM - 12 PM</span>
+                    <span>7 PM - 12 AM</span>
                   </div>
                 </div>
 
@@ -292,7 +292,7 @@ function Events() {
                     onClick={(e) => {
                       e.stopPropagation(); // Prevent event bubbling
                       window.open(
-                        "https://forms.gle/YxcV5sNxthH1Xkdo8",
+                        "https://forms.gle/z4NK7Nn1YNNSEq3r6",
                         "_blank"
                       );
                     }}
