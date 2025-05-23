@@ -244,24 +244,26 @@ function Events() {
                 ]}
               />
               <div className="p-3 flex-1 flex flex-col justify-between">
-                <h3 className="text-xl font-semibold mb-1">AURORA</h3>
+                <h3 className="text-xl font-semibold mb-1">SUKOON</h3>
                 <p className="text-gray-400 mb-2 line-clamp-2">
-                NETFLIX AND THRILL Also Inclusive of a complimentary shot or beverage.
+                An Exlusive Rooftop Affair - a rooftop DJ party like no other.
                 </p>
 
                 {/* Event details */}
                 <div className="mb-3 text-gray-300">
                   <div className="flex items-center gap-2 mb-1">
                     <Calendar className="h-4 w-4 text-purple-400" />
-                    <span>April 26th, Saturday</span>
+                    <span>June 6th, Friday</span>
                   </div>
                   <div className="flex items-center gap-2 mb-1">
                     <MapPin className="h-4 w-4 text-purple-400" />
-                    <span>House of People</span>
+                    <span>Merlot & Co, Jaipur
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4 text-purple-400" />
-                    <span>7 PM - 12 AM</span>
+                    <span>7:00 PM - 12:00 Midnight
+                    </span>
                   </div>
                 </div>
 
@@ -286,7 +288,7 @@ function Events() {
 
                 <div className="flex items-center justify-between mt-2">
                   <span className="text-purple-500 font-semibold">
-                    From ₹400
+                    {/* From ₹400 */}
                   </span>
                   <button
                     onClick={(e) => {
