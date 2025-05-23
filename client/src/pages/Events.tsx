@@ -294,7 +294,7 @@ function Events() {
                     onClick={(e) => {
                       e.stopPropagation(); // Prevent event bubbling
                       window.open(
-                        "https://forms.gle/z4NK7Nn1YNNSEq3r6",
+                        "https://docs.google.com/forms/d/13FyTGsBPeFxdWhkdtxd3f9g4_nYogLVWQ7ymvt0Tag8/viewform",
                         "_blank"
                       );
                     }}
