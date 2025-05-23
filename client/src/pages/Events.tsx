@@ -238,7 +238,7 @@ function Events() {
             >
               <ImageCarousel
                 images={[
-                  "/mani2.jpg", // Replace with actual image URLs
+                  "/merlinandco.jpg", // Replace with actual image URLs
                   "mani1.jpg",
                   "/mani3.jpg",
                 ]}
@@ -268,7 +268,7 @@ function Events() {
                 </div>
 
                 {/* Show ticket tiers */}
-                <div className="mb-2">
+                {/* <div className="mb-2">
                   <p className="text-sm text-gray-400 mb-1">
                     🎟️ EARLY BIRD TICKETS:
                   </p>
@@ -284,7 +284,7 @@ function Events() {
                     <span>Couple Pass</span>
                     <span>₹1299</span>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex items-center justify-between mt-2">
                   <span className="text-purple-500 font-semibold">
